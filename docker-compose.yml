@@ -1,5 +1,12 @@
 version: '3.8'
 services:
+  terraform:
+    build:
+      dockerfile: terraform.dockerfile
+      context: .
+    volumes:
+      - $PWD:/app
+    working_dir: /app
   website:
     build:
       context: .
